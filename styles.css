@@ -1,0 +1,702 @@
+:root {
+    --primary-green: #2ecc71;
+    --dark-green: #27ae60;
+    --light-green: #a8e6cf;
+    --white: #ffffff;
+    --black: #000000;
+    --dark-gray: #1a1a1a;
+    --light-gray: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--white);
+    background: var(--black);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: var(--black);
+    overflow: hidden;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        rgba(46, 204, 113, 0.1) 45%,
+        rgba(46, 204, 113, 0.1) 55%,
+        transparent 100%);
+    animation: movingLight 8s linear infinite;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--white);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.main-battery {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(46, 204, 113, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Solution Section */
+.solution {
+    background: var(--black);
+    padding: 80px 0;
+    position: relative;
+    text-align: center;
+}
+
+.solution::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(39, 174, 96, 0.1), rgba(46, 204, 113, 0.05));
+}
+
+.solution h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--white);
+    position: relative;
+}
+
+.solution p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #cccccc;
+    position: relative;
+}
+
+.solution-image i {
+    font-size: 4rem;
+    color: var(--primary-green);
+    position: relative;
+}
+
+/* Vehicles Section */
+.vehicles {
+    background: var(--black);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+.vehicles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.1));
+}
+
+.vehicles h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: var(--white);
+    position: relative;
+}
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    position: relative;
+}
+
+.vehicle-item {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.vehicle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.2);
+    border-color: rgba(46, 204, 113, 0.4);
+}
+
+.vehicle-item i {
+    font-size: 3rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+}
+
+.vehicle-item h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+/* Brands Section */
+.brands {
+    background: var(--black);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+.brands::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.1));
+}
+
+.brands h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--white);
+    position: relative;
+}
+
+.brands p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #cccccc;
+    position: relative;
+}
+
+.brand-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    position: relative;
+}
+
+.brand-item {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.brand-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.2);
+    border-color: rgba(46, 204, 113, 0.4);
+}
+
+.model-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 5px 15px rgba(46, 204, 113, 0.2));
+}
+
+.brand-models h3 {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin: 15px 0;
+}
+
+.brand-models p {
+    color: #cccccc;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Diferentials Section */
+.diferentials {
+    background: var(--black);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+.diferentials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.1));
+}
+
+.diferentials h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: var(--white);
+    position: relative;
+}
+
+.comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.others, .we-offer {
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.others h3, .we-offer h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.others ul, .we-offer ul {
+    list-style: none;
+    text-align: left;
+}
+
+.others li, .we-offer li {
+    color: #cccccc;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.others i {
+    color: #e74c3c;
+}
+
+.we-offer i {
+    color: var(--primary-green);
+}
+
+/* Contact Section */
+.contact {
+    background: var(--black);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(39, 174, 96, 0.05), rgba(46, 204, 113, 0.1));
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--white);
+    position: relative;
+}
+
+.contact p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #cccccc;
+    position: relative;
+}
+
+/* Buttons */
+.cta-button, .call-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cta-button {
+    background: #25d366;
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.call-button {
+    background: var(--dark-green);
+    color: var(--white);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+.cta-button:hover, .call-button:hover {
+    transform: translateY(-3px);
+    color: var(--white);
+}
+
+.cta-button:hover {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.call-button:hover {
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #25d366;
+    color: var(--white);
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px 20px 10px 10px;
+}
+
+.whatsapp-float i {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 1.5s infinite;
+}
+
+.whatsapp-text {
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 500;
+    display: block;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    background: #22c35e;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive adjustments for WhatsApp button */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        left: 20px;
+        padding: 8px 15px 8px 8px;
+    }
+
+    .whatsapp-float i {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+
+    .whatsapp-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-text {
+        display: none;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .whatsapp-float i {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes movingLight {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Background Effects */
+.background-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.moving-light {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(46, 204, 113, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+}
+
+.moving-light:nth-child(1) {
+    top: 20%;
+    left: -150px;
+    animation: lightMove1 15s linear infinite;
+}
+
+.moving-light:nth-child(2) {
+    top: 50%;
+    left: -150px;
+    animation: lightMove2 12s linear infinite;
+}
+
+.moving-light:nth-child(3) {
+    top: 80%;
+    left: -150px;
+    animation: lightMove3 18s linear infinite;
+}
+
+@keyframes lightMove1 {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 150px)) scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes lightMove2 {
+    0% {
+        transform: translateX(0) scale(1.2);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 150px)) scale(0.8);
+        opacity: 0;
+    }
+}
+
+@keyframes lightMove3 {
+    0% {
+        transform: translateX(0) scale(0.8);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 150px)) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.vehicle-animation {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 1;
+}
+
+.vehicle-animation i {
+    position: absolute;
+    color: rgba(46, 204, 113, 0.15);
+    font-size: 30px;
+    filter: blur(1px);
+}
+
+.vehicle-animation i:nth-child(1) {
+    bottom: 0;
+    left: -30px;
+    animation: vehicleMove 20s linear infinite;
+    animation-delay: 0s;
+}
+
+.vehicle-animation i:nth-child(2) {
+    bottom: 20px;
+    left: -30px;
+    animation: vehicleMove 15s linear infinite;
+    animation-delay: 5s;
+}
+
+.vehicle-animation i:nth-child(3) {
+    bottom: 40px;
+    left: -30px;
+    animation: vehicleMove 25s linear infinite;
+    animation-delay: 10s;
+}
+
+@keyframes vehicleMove {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 30px));
+        opacity: 0;
+    }
+}
+
+/* Ajuste do z-index do conteúdo */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .cta-button, .call-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .vehicle-grid, .brand-carousel, .comparison {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
